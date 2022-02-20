@@ -1,12 +1,14 @@
+import PropTypes from 'prop-types';
+
 import { Container, Footer, Overlay } from './styles';
 
 import Button from '../Button';
 
-export default function Modal() {
+export default function Modal({ danger }) {
   return (
     <Overlay>
-      <Container>
-        <h1>Titlo do Modal</h1>
+      <Container danger={danger}>
+        <h1>Título do Modal</h1>
 
         <p>Corpo do Modal</p>
 
@@ -16,7 +18,7 @@ export default function Modal() {
             Cancelar
           </button>
 
-          <Button type="button">
+          <Button type="button" danger={danger}>
             Deletar
           </Button>
 
@@ -25,3 +27,11 @@ export default function Modal() {
     </Overlay>
   );
 }
+
+Modal.propTypes = {
+  danger: PropTypes.bool,
+};
+
+Modal.defaultProps = {
+  danger: false,
+};
