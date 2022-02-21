@@ -13,6 +13,7 @@ export default styled.select`
   background-color: #FFF;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.04);
   transition: 0.2 ease-in;
+  appearance: none;
 
   &:focus {
     border-color: ${({ theme }) => theme.colors.primary.main};
