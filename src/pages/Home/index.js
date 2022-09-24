@@ -5,7 +5,8 @@ import {
   useCallback, useEffect, useMemo, useState,
 } from 'react';
 import {
-  Card, Container, EmptyListContainer, ErrorContainer, Header, InputSearchContainer, ListHeader,
+  Card, Container, EmptyListContainer, ErrorContainer, Header, InputSearchContainer,
+  ListHeader, SearchNotFoundContainer,
 } from './styles';
 
 import arrow from '../../assets/images/icons/arrow.svg';
@@ -13,6 +14,7 @@ import edit from '../../assets/images/icons/edit.svg';
 import trash from '../../assets/images/icons/trash.svg';
 import sad from '../../assets/images/sad.svg';
 import emptyBox from '../../assets/images/empty-box.svg';
+import magnifierQuestion from '../../assets/images/magnifier-question.svg';
 
 import Loader from '../../components/Loader';
 import Button from '../../components/Button';
@@ -123,6 +125,13 @@ export default function Home() {
                 cadastrar o seu primeiro!
               </p>
             </EmptyListContainer>
+          )}
+
+          {((contacts.length > 0) && (filteredContacts.length < 1)) && (
+            <SearchNotFoundContainer>
+              <img src={magnifierQuestion} alt="Magnifier Question" />
+              <p>Nenhum resultado foi encontrado para <strong>”{searchTerm}”</strong>.</p>
+            </SearchNotFoundContainer>
           )}
 
           {(filteredContacts.length > 0) && (
