@@ -16,7 +16,7 @@ export default styled.button`
   background: ${({ theme }) => theme.colors.primary.main};
   transition: background 0.2 ease-in;
 
-  &:hover {
+  &:hover, &:focus {
     background: ${({ theme }) => theme.colors.primary.light};
   }
 
