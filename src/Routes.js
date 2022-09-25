@@ -9,7 +9,7 @@ export default function Routes() {
     <Switch>
       <Route path="/" exact component={Home} />
       <Route path="/new" component={NewContact} />
-      <Route path="/edit/:is" component={EditContact} />
+      <Route path="/edit/:id" component={EditContact} />
     </Switch>
   );
 }
