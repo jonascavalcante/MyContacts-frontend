@@ -20,7 +20,8 @@ export default styled.select`
   }
 
   &[disabled] {
-    border-color: ${({ theme }) => theme.colors.gray[100]};
-    background-color: ${({ theme }) => theme.colors.gray[200]};
+    border-color: ${({ theme }) => theme.colors.gray[200]};
+    background-color: ${({ theme }) => theme.colors.gray[100]};
+    opacity: 1;
   }
 `;
