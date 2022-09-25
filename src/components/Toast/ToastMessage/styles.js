@@ -21,10 +21,17 @@ export const Container = styled.div`
   ${({ type }) => containerVariants[type] || containerVariants.default}; /* background-color */
   box-shadow: 0 20px 20px -16px rgba(0, 0, 0, 0.25);
 
+  &:focus {
+    background-color: purple;
+    outline: transparent;
+  }
+
   display: flex;
   justify-content: center;
   place-items: center;
   gap: 8px;
+
+  cursor: pointer;
 
   &+& {
     margin-top: 12px;

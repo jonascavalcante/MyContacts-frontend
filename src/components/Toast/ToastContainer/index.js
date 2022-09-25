@@ -23,10 +23,18 @@ export default function ToastContainer() {
     };
   }, []);
 
+  function handleRemoveMessage(id) {
+    setMessages((prevState) => prevState.filter((message) => message.id !== id));
+  }
+
   return (
     <Container>
-      {messages.map(({ id, type, text }) => (
-        <ToastMessage key={id} text={text} type={type} />
+      {messages.map((message) => (
+        <ToastMessage
+          key={message.id}
+          message={message}
+          onRemoveMessage={handleRemoveMessage}
+        />
       ))}
     </Container>
   );
