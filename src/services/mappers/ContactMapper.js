@@ -8,9 +8,18 @@ class ContactMapper {
     };
   }
 
-  // toDomain(persistence) {
-  //   return {};
-  // }
+  toDomain(persistence) {
+    return {
+      id: persistence.id,
+      name: persistence.name,
+      email: persistence.email,
+      phone: persistence.phone,
+      category: {
+        id: persistence.category_id,
+        name: persistence.category_name,
+      },
+    };
+  }
 }
 
 export default new ContactMapper();
