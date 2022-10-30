@@ -7,9 +7,7 @@ import toast from '../../utils/toast';
 
 import useSafeAsyncAction from '../../hooks/useSafeAsyncAction';
 
-import Presentation from './Presentation';
-
-export default function Container() {
+export default function useEditContact() {
   const { id } = useParams();
   const history = useHistory();
   const safeAsyncAction = useSafeAsyncAction();
@@ -63,12 +61,7 @@ export default function Container() {
     }
   }
 
-  return (
-    <Presentation
-      isLoading={isLoading}
-      contactName={contactName}
-      contactFormRef={contactFormRef}
-      onSubmit={handleSubmit}
-    />
-  );
+  return {
+    isLoading, contactName, contactFormRef, handleSubmit,
+  };
 }
