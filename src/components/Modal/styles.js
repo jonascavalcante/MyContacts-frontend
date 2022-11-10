@@ -40,7 +40,7 @@ export const Overlay = styled.div`
   ${({ isLeaving }) => isLeaving && css`
     animation: ${fadeOut} 0.2s forwards;
   `}
-  `;
+`;
 
 export const Container = styled.div`
   width: 100%;

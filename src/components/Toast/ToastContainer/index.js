@@ -34,12 +34,12 @@ export default function ToastContainer() {
 
   return (
     <Container>
-      {renderList((message, { ìsLeaving, animatedRef }) => (
+      {renderList((message, { isLeaving, animatedRef }) => (
         <ToastMessage
           key={message.id}
           message={message}
           onRemoveMessage={handleRemoveItem}
-          ìsLeaving={ìsLeaving}
+          isLeaving={isLeaving}
           animatedRef={animatedRef}
         />
       ))}
